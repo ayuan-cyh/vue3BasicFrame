@@ -4,13 +4,18 @@ import Home from '../views/Home.vue'
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
-        name: 'Home',
+        name: 'Index',
         component: Home,
         children: [
             {
                 path: '/about',
                 name: "About",
                 component: () => import("../views/about.vue")
+            },
+            {
+                path: "/home",
+                name: 'Home',
+                component: () => import("../views/index.vue")
             }
         ]
     },
