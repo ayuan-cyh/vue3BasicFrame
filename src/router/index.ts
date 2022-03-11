@@ -3,10 +3,18 @@ import Home from '../views/Home.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
-        path: '/home',
+        path: '/',
         name: 'Home',
-        component: Home
-    }
+        component: Home,
+        children: [
+            {
+                path: '/about',
+                name: "About",
+                component: () => import("../views/about.vue")
+            }
+        ]
+    },
+
 ]
 
 const router = createRouter({
